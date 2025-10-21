@@ -1,0 +1,18 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+dist/
+.vscode/
+
+# Env
+.env
+.env.local
+
+# Data / audio / logs
+data/audio_cache/
+data/voice_samples/
+*.log
