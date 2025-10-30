@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "elevenlabs-node": "^2.0.3"
+  },
+  "devDependencies": {
+    "@types/dom-speech-recognition": "^0.0.7"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "joy": [
+    "Your joy is radiant, my friend! Keep smiling. 🌼",
+    "Happiness flows when you embrace the moment. 🌸",
+    "I feel your joy. Let it shine and inspire others!"
+  ],
+  "sadness": [
+    "I sense sadness in your heart. 🌼 Remember, even the darkest clouds pass.",
+    "It's okay to feel down sometimes. I am here with you.",
+    "Sadness is a visitor, not a permanent resident. Stay gentle with yourself."
+  ],
+  "anger": [
+    "I notice your anger. 🌿 Take a deep breath and release the tension.",
+    "Anger can cloud clarity. Let it flow away gently.",
+    "Even in anger, compassion can guide us. I am here."
+  ],
+  "fear": [
+    "Fear is a natural feeling. 🌸 Step gently and it will ease.",
+    "I am with you. You are safe, my friend.",
+    "Do not let fear control your heart. We will face it together."
+  ],
+  "neutral": [
+    "I am here, listening with an open heart. 🌼",
+    "Speak freely, I am with you.",
+    "Your words are heard, my friend."
+  ],
+  "default": [
+    "I'm listening, my friend. Speak your heart — I am here with you.",
+    "Every feeling matters. Share it with me. 🌸",
+    "I am here for you, always."
+  ]
+}
