@@ -95,8 +95,10 @@ function App() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  // 🎵 Setup flute background music
+  // 🌌 Cosmic dynamic background + 🎵 Flute background music
   useEffect(() => {
+    document.body.classList.add("cosmic-bg"); // Add cosmic background
+
     const audio = new Audio("/flute.mp3");
     audio.loop = true;
     audio.volume = 0.25;
@@ -109,10 +111,11 @@ function App() {
       }).catch(() => {});
     };
 
-    // Autoplay policy fix — wait for click
+    // Autoplay policy fix — waits for click
     document.addEventListener("click", tryPlay);
 
     return () => {
+      document.body.classList.remove("cosmic-bg");
       audio.pause();
       document.removeEventListener("click", tryPlay);
     };
@@ -259,18 +262,20 @@ function App() {
         width: "90%",
         maxWidth: "900px",
         margin: "auto",
-
         fontFamily: "'Poppins', sans-serif",
-        background: "linear-gradient(to bottom, #fdfbfb, #ebedee)",
+        background: "rgba(255, 255, 255, 0.2)",
         padding: "20px",
         borderRadius: "20px",
         boxShadow: "0 10px 25px rgba(0,0,0,0.15)",
         position: "relative",
+        backdropFilter: "blur(10px)",
       }}
     >
       <h1 style={{ textAlign: "center", color: "#5e35b1", marginBottom: 16 }}>
         <span style={{ display: "block", fontSize: 28 }}>"Talk to Kanha"</span>
-        <span style={{ display: "block", fontSize: 16, marginTop: 6 }}>your Safe Space </span>
+        <span style={{ display: "block", fontSize: 16, marginTop: 6 }}>
+          your Safe Space{" "}
+        </span>
       </h1>
 
       {/* 🎶 Music Toggle Button */}
@@ -296,7 +301,7 @@ function App() {
         {isMusicPlaying ? "🔊" : "🔇"}
       </button>
 
-      {/* Chat Messages */}
+      {/* Chat Section */}
       <div
         style={{
           border: "1px solid #db4949ff",
@@ -349,7 +354,7 @@ function App() {
         <div ref={messagesEndRef} />
       </div>
 
-      {/* Textbox */}
+      {/* Input Section */}
       <textarea
         value={text}
         onChange={(e) => setText(e.target.value)}

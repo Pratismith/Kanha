@@ -1,3 +1,4 @@
+/* 🌌 Cosmic dynamic background */
 #root {
   width: 100vw;
   height: 100vh;
@@ -6,10 +7,43 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to bottom right, #ede7f6, #f3e5f5);
+  overflow: hidden;
+  position: relative;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
 }
 
+/* Add moving stars */
+@keyframes moveStars {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+}
 
+#root::before,
+#root::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: transparent url("https://www.transparenttextures.com/patterns/stardust.png") repeat top center;
+  animation: moveStars 60s linear infinite;
+  opacity: 0.4;
+  z-index: 0;
+}
+
+/* Keep your existing chatbox styles on top of stars */
+div[data-reactroot] > div,
+#root > div {
+  position: relative;
+  z-index: 10;
+}
+
+/* Other existing styles */
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -23,25 +57,8 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
